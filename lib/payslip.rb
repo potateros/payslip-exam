@@ -11,10 +11,10 @@ class Payslip
   def printout
     tax_bracket = TaxBrackets.new(@salary)
     total_tax = tax_bracket.calculate_tax
-    p "Annual Payslip for: #{@name}"
-    p "Gross Annual Income: $#{@salary}"
-    p "Annual Income Tax: $#{total_tax}"
-    p "Net Annual Income: $#{@salary - total_tax}"
+    p "Monthly Payslip for: #{@name}"
+    p "Gross Monthly Income: $#{@salary/12}"
+    p "Monthly Income Tax: $#{total_tax/12}"
+    p "Net Monthly Income: $#{(@salary - total_tax)/12}"
     return
   end
 
